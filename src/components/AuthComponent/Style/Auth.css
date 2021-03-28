@@ -1,0 +1,70 @@
+.mainPage {
+  position: relative;
+  /* height: 100vh; */
+  width: 100%;
+  background-position: center;
+  background-image: url("../../../Images/bg-img.jpg");
+}
+
+.CommanPage {
+  position: absolute;
+  left: 0%;
+  /* height: 100vh; */
+  overflow: hidden;
+  width: 40%;
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid #ddd;
+}
+
+.CommanPage .CommanPart {
+  padding: 17% 15%;
+  overflow: hidden;
+  text-align: center;
+}
+
+.CommanPage .CommanPart h2 {
+  font-size: 28px;
+  margin: 0px;
+}
+
+.CommanPage .CommanPart p {
+  margin: 10px 0px 15px;
+}
+
+.CommanPage .inputFeilds {
+  padding: 20px 0px;
+}
+
+.CommanPage .inputFeilds input {
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding: 0px 10px;
+  border: none;
+  border-bottom: 1px solid #00222e;
+  margin-bottom: 15px;
+  outline: none;
+}
+
+.CommanPage .remember {
+  display: flex;
+  align-items: center;
+}
+
+.CommanPage .CommanPart button {
+  display: block;
+  text-align: center;
+  width: 100%;
+  margin-top: 20px;
+  background-color: #00222e;
+  color: #fff;
+  padding: 13px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+}
+
+.CommanPage .CommanPart .link {
+  text-decoration: none;
+}
