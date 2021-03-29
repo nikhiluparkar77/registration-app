@@ -1,0 +1,36 @@
+.header {
+  background-color: #00222e;
+  padding: 10px 30px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .appName a {
+  color: #fff;
+  text-decoration: none;
+  outline: none;
+  font-weight: 600;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.header .links ul {
+  list-style: none;
+}
+
+.header .links ul li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.header .links ul li a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  outline: none;
+}
+
+.header .links ul li a:hover {
+  color: rgba(255, 255, 255, 1);
+}

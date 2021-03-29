@@ -17,3 +17,6 @@ code {
 
 /* ------------ auth css ------------- */
 @import url("./components/AuthComponent/Style/Auth.css");
+
+/* ------------- header css -------------- */
+@import url("./components//HeaderComponent/Style/Header.css");

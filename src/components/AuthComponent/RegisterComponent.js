@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import {Link} from "react-router-dom";
  
 
@@ -10,7 +10,22 @@ const RegisterComponent = () => {
         password:""
     }); 
     const [reginterInfo, setRegisterInfo] = useState([]);
+    const [user, setUser] = useState([]);
     
+    useEffect(()=>{
+        if(localStorage.getItem("reginterInfo") === null){
+            localStorage.setItem("reginterInfo", JSON.stringify(reginterInfo))
+        } 
+        const userData = localStorage.getItem("reginterInfo");
+        setUser(JSON.parse(userData));
+    },[])
+
+    useEffect(()=>{
+        user.filter(item=> {
+            if(item.email === feild.email) alert("email already avilable")
+        } )
+    })
+
     const handleChange = (e) => {
         const {name, value} = e.target;
         setFeild({
@@ -21,14 +36,10 @@ const RegisterComponent = () => {
   
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-        // if(localStorage.getItem(reginterInfo) === null){ 
-        //     localStorage.setItem("reginterInfo", JSON.stringify([])); 
-        // }else{
-            setRegisterInfo([...reginterInfo, feild])
-            localStorage.setItem("reginterInfo", JSON.stringify(reginterInfo)); 
-        // }
-                
+        e.preventDefault(); 
+        setRegisterInfo([...reginterInfo, feild])
+        localStorage.setItem("reginterInfo", JSON.stringify(reginterInfo));  
+        window.location.href = "/login";
     }
 
     return (

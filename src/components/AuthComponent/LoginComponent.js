@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
 import {Link} from "react-router-dom";
 
 const LoginComponent = () => {
@@ -6,6 +6,23 @@ const LoginComponent = () => {
         email:"",
         password:""
     });
+    const [user, setUser] = useState([]);
+    const [login, setLogin] = useState(false);
+
+
+    useEffect(()=>{
+        if(localStorage.getItem("reginterInfo") === null){
+            setUser(JSON.parse(null));
+            setLogin(false);
+        }else{
+            const userData = localStorage.getItem("reginterInfo");
+            setLogin(true);
+            localStorage.setItem("login" , login);
+            setUser(JSON.parse(userData)); 
+        }  
+    },[])
+
+  
 
     const handleChange = (e) => {
         const {name, value} = e.target;
@@ -15,11 +32,25 @@ const LoginComponent = () => {
         })
     }
 
+  
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        let userInfo = localStorage.getItem("reginterInfo"); 
-        userInfo.map(item=>console.log(item))
-        console.log(userInfo.email)
+        if(user === null){
+            alert("Please Register")
+        }else{
+            user.filter(item => {
+                if(item.email === feild.email  && item.password === feild.password){
+                    alert("login Successful");
+                    window.location.href = "/dashbord";
+                }else{
+                    alert("Please Register")
+                }
+            })
+        }
+       
+
+         
     }
 
     return (
