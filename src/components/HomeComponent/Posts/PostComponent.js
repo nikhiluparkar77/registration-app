@@ -1,13 +1,13 @@
 import React,{useEffect, useState} from 'react';
 import {connect} from "react-redux";
 import { getPostFunc } from '../../../Redux/Actions/AllActions/AllAction';
+import Loader from '../../OtherComponents/Loader/Loader';
 
 const PostComponent = ({getPostFunc,userPost}) => {
     const [post, setPost] = useState([]); 
     
-    useEffect(()=>{
-        getPostFunc();
-        
+    useEffect(()=>{ 
+        getPostFunc();  
     },[]);
 
     useEffect(()=>{
@@ -15,11 +15,13 @@ const PostComponent = ({getPostFunc,userPost}) => {
     })
 console.log(post)
 
-if(post.userPost === undefined) return <h3>Post Not Found</h3>
+ 
 
     return (
+        
         <div className="userPost">
-            {
+
+            { post.length === 0 ? <Loader /> :
                post.userPost.map((item,index)=>(
                    <div key={index}>
                        {item.title}
@@ -28,6 +30,8 @@ if(post.userPost === undefined) return <h3>Post Not Found</h3>
 
             }
         </div>
+         
+         
     )
 }
 

@@ -20,3 +20,6 @@ code {
 
 /* ------------- header css -------------- */
 @import url("./components//HeaderComponent/Style/Header.css");
+
+/* ----------- loader css ----------- */
+@import url("./components/OtherComponents/Loader/Style/Loader.css");
